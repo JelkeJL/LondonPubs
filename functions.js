@@ -4,13 +4,13 @@ $.getJSON("data.json", function(json) {
 });
 
 function initMap() {
-    var ArenbergIII = {lat: 50.863002, lng: 4.678974};
+    var GH_london = {lat: 51.6633, lng: -0.0923};
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 9,
-        center: ArenbergIII
+        center: GH_london
     });
     var marker = new google.maps.Marker({
-        position: ArenbergIII,
+        position: GH_london,
         map: map
     });
 }
