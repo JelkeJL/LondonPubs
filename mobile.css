@@ -18,6 +18,26 @@ body
 }
 
 #map {
-	width: 70%;
+	width: 100%;
 	float: bottom;
+}
+
+#map_info{
+	float: top;
+	width: 100%;
+}
+
+#nav {
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+}
+
+#nav img {
+    width: 150px;
+    height: auto;
+    padding: 1;
+    border: 1;
+    margin: 1;
+    float: left;
 }

@@ -31,14 +31,36 @@
         <br>
     </div>
 
-
 <h1>
-    London Historical Pubs: <emp>Jelke Joosen – Master Project</emp>
+    London Historical Pubs Map
 </h1>
+<div id="map_info">
+<p>
+    Welcome to the London Historical Pubs map. Please allow location sharing so we can show you some pub locations in your neighborhood.
+</p>
+<h2>
+    Selection criteria <em>(not obligatory)</em>.
+</h2>
+<p>
+
+    <form action="/action_page.php">
+      <input type="checkbox" name="exists" value="existing"> Foursquare-rated Pubs<br>
+      <input type="checkbox" name="vicinity" value="near"> Pubs Close to Me<br>
+      <input type="checkbox" name="image" value="has_photo"> Pubs with Images<br>
+      <input type="checkbox" name="non_existing" value="gone"> Previously known as Pub Locations <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+</p>
+</div>
 
 <div id="map">
     </div>
 <br> <hline>
 
 </body>
+
+<div class="footer">
+  <p>Web application made as part of Jelke Joosen's Thesis for the Advanced Master in Digital Humanities at KU Leuven</p>
+</div>
 </html>

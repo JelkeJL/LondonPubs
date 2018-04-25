@@ -102,3 +102,49 @@ a:hover{
 a:active{
     text-decoration: underline;
 }
+
+
+h1{
+    font-family: sans-serif;
+    color: #1D8DB0;
+    font-size: 20px;
+    line-height: 50px;
+
+}
+
+h2{
+    font-family: sans-serif;
+    color: #1D8DB0;
+    font-size: 15px;
+    line-height: 50px;  
+}
+
+form{
+    font-family: sans-serif;
+    color: #1FABD5;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+p {
+    font-family: sans-serif;
+    color: #00407A;
+    font-size: 12px;
+    line-height: 20px
+}
+
+#map_info{
+    width: 45%;
+    float: right;
+    border: 10px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1D8DB0;
+    color: white;
+    text-align: center;
+}
