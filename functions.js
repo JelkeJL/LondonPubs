@@ -19,7 +19,7 @@ function initMap() {
 var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 50.863002, lng: 4.678974},
+          center: {lat: 51.6633, lng: -0.0923},
           zoom: 15
         });
         infoWindow = new google.maps.InfoWindow;
@@ -44,7 +44,7 @@ var map, infoWindow;
 
           var image = {
             url : 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/flag-for-united-kingdom_1f1ec-1f1e7.png',
-            scaledSize: new google.maps.Size(40, 40), // scaled size
+            scaledSize: new google.maps.Size(25, 25), // scaled size
             origin: new google.maps.Point(0,0), // origin
             anchor: new google.maps.Point(0, 0), // anchor
           }
