@@ -1,7 +1,4 @@
-$.getJSON("data.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
 
-});
 /*
 function initMap() {
     var GH_london = {lat: 51.6633, lng: -0.0923};
@@ -15,6 +12,21 @@ function initMap() {
     });
 }
 */
+$(function() {
+
+	$.getJSON("data.json", function(json) {
+   	 console.log(json); // this will show the info it in firebug console
+
+	});
+
+	$(".foursquare").click(function() {
+  		console.log("do something");
+	});
+	
+	console.log("asd");
+});
+
+
 
 var map, infoWindow;
       function initMap() {
