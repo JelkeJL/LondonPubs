@@ -130,12 +130,69 @@ form {
 /* home page */
 #main {
     margin-top: 120px;
-    margin-bottom: 30px;
+    margin-bottom: 120px;
     width: 100%;
     justify-content: space-around;
     text-align: justify;
     position: relative;
 
+
+}
+
+#card {
+    align: center;
+    background-color: #C8102E;
+    padding: 2%;
+    overflow: auto;
+}
+#card img{
+    height: 250px;
+    float: left;
+    width: 30 %;
+    padding: 1%;
+    background-color: #FFFFFF;
+}
+
+#card p{
+    float: right;
+    width: 65%;
+    background: #C8102E;
+    padding: 1%;
+    color: #012169;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#card p a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#London {
+    align: center;
+    background-color: #012169;
+    padding: 2%;
+    overflow: auto;
+}
+#London img{
+    height: 250px;
+    float: right;
+    width: 30 %;
+    padding: 1%;
+    background-color: #FFFFFF;
+}
+
+#London p{
+    float: left;
+    width: 65%;
+    background: #012169;
+    padding: 1%;
+    color: #FFFFFF;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#London p a{
+    color: #C8102E;
+    text-decoration: none;
 }
 
 #selectmenu{
@@ -162,8 +219,12 @@ footer {
 .github {
     float: right;
     margin-right: 25px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .disclaim {
     float: left;
+    margin-top: 0;
+    margin-bottom: 0;
 }
