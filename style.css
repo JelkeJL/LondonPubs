@@ -24,7 +24,7 @@ h3 {
     font-family: 'Lato', sans-serif;
     color: #C8102E;
 }
-
+/*
 a:hover{
     text-decoration: underline;
 }
@@ -32,7 +32,7 @@ a:hover{
 a:active{
     text-decoration: underline;
 }
-
+*/
 p a{
     color: #1D8DB0;
     text-decoration: none;
@@ -44,11 +44,6 @@ p {
 }
 
 ol {
-    font-family: 'Lato', sans-serif;
-    font-size: 13px;
-}
-
-ul {
     font-family: 'Lato', sans-serif;
     font-size: 13px;
 }
@@ -127,6 +122,10 @@ form {
     text-decoration: none;
 }
 
+#nav a.hover{
+    color: #C8102E;
+}
+
 /* home page */
 #main {
     margin-top: 120px;
@@ -144,11 +143,12 @@ form {
     background-color: #C8102E;
     padding: 2%;
     overflow: auto;
+    margin: 0.5%;
 }
 #card img{
-    height: 250px;
+    height: auto;
     float: left;
-    width: 30 %;
+    width: 20%;
     padding: 1%;
     background-color: #FFFFFF;
 }
@@ -159,7 +159,9 @@ form {
     background: #C8102E;
     padding: 1%;
     color: #012169;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Pompiere', cursive;
+    margin-left: 0;
+    font-size: 1.25em;
 }
 
 #card p a{
@@ -171,12 +173,14 @@ form {
     align: center;
     background-color: #012169;
     padding: 2%;
+    border: 1%;
     overflow: auto;
+    margin: 0.5%;
 }
 #London img{
-    height: 250px;
+    height: auto;
     float: right;
-    width: 30 %;
+    width: 20%;
     padding: 1%;
     background-color: #FFFFFF;
 }
@@ -187,7 +191,16 @@ form {
     background: #012169;
     padding: 1%;
     color: #FFFFFF;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Pompiere', cursive;
+    margin-right: 0;
+    font-size: 1.25em;
+}
+
+#London ul{
+    float: left;
+    color: #FFFFFF;
+    font-family: 'Pompiere', cursive;
+    font-size: 10px;
 }
 
 #London p a{
@@ -213,6 +226,7 @@ footer {
     background-color: white;
     clear: left;
     text-align: center;
+    font-family: sans-serif;
 }
 
 

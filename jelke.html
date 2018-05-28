@@ -8,14 +8,13 @@
     <link rel="stylesheet" media="screen and (max-width:480px)" href="mobile.css">
     <link rel="icon" href="https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/129/girl_emoji-modifier-fitzpatrick-type-4_1f467-1f3fd_1f3fd.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
 
-    <script type="text/javascript" src="data.json"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="functions.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZHYymzYflI1c7mbhFTcsb6NN4ss7LBwU&callback=initMap" type="text/javascript"></script>
+
     <title>Jelke</title>
 </head>
 
@@ -32,7 +31,7 @@
     </div>
     <div id ="main">
        <div id="card">
-        <img src="images/jelke_london2.jpg">
+        <img src="images/jelke_london2.jpg" name="Trafalgar Square" alt="Trafalgar Square">
         <p>
             Hello, my name is Jelke, and I am a student in the advanced master's programme of Digital Humanities at KU Leuven. In my free time I enjoy playing the saxophone and the trombone, and I can often be found volunteering at <a href="https://www.kwikkwak.be" target="_blank">Kwik Kwak</a>, attempting to provide children with entertaining and amusing school vacations.
         </p>   
@@ -41,9 +40,12 @@
         </p>
         </div>
         <div id="London">
-            <img src="images/jelke_london.jpg">
+            <img src="images/jelke_london.jpg" id="Tower Bridge" alt="Tower Bridge">
             <p>
-                test
+                Despite not having been to London that often, it is one of my favorite vaction destinations. I only visited the UK's capital city for the first time in 2015, when a friend offered to show me around. Some of the things I enjoy doing the most when I'm there are: seeing musicals, walking around the parks, visiting Camden Stables Market, and meeting up with friends.
+            </p>
+            <p>
+                What is nice about the pubs in London is that some of them can be – or at least seem – quite historic. Therefore, visiting pubs in London as a tourist is often not solely about the drinks, but also about the atmosphere. After obtaining a dataset that contained (very) old pictures of pubs in London, the idea to build a recommender web application that could enable a tourist to find out what some old pubs <em>used to<em> look like, seemed to be a fun one.
             </p>
         </div>  
     </div>
@@ -53,6 +55,6 @@
 </body>
 
 <footer>
- <p class="disclaim">Web application made as part of Jelke Joosen's Thesis for the Advanced Master in Digital Humanities at KU Leuven</p>
+ <p class="disclaim">This web application was made as part of Jelke Joosen's Thesis for the Advanced Master in Digital Humanities at KU Leuven</p>
  <p class="github"><a class="github-button" href="https://github.com/jelkejl" aria-label="Follow @jelkejl on GitHub">@JelkeJL</a></p>
 </footer>
