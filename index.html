@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" media="screen and (max-width:480px)" href="mobile.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="functions.js"></script>
 
     <script type="text/javascript" src="data.json"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="functions.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZHYymzYflI1c7mbhFTcsb6NN4ss7LBwU&callback=initMap" type="text/javascript"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <title>Jelke Joosen Thesis Project</title>
-    <br>
+    <title>London Historical Pubs</title>
 </head>
-<script>
-
-</script>
 <body>
 
     <div id="nav">
@@ -30,39 +28,20 @@
         </ul>
         <br>
     </div>
+    <div id ="main">
+        <h1>London Historical Pubs Map</h1>
 
-    <div id="content">
-        <h1>
-            London Historical Pubs Map
-        </h1>
-        <div id="map_info">
-        <p>
-            Welcome to the London Historical Pubs map. Please allow location sharing so we can show you some pub locations in       your neighborhood.
-        </p>
-        <h2>
-            Selection criteria <em>(not obligatory)</em>.
-        </h2>
-        <p>
-        
-            <form action="/action_page.php">
-              <input class="foursquare" type="checkbox" name="exists" value="existing"> Foursquare-rated Pubs<br>
-              <input type="checkbox" name="vicinity" value="near"> Pubs Close to Me<br>
-              <input type="checkbox" name="image" value="has_photo"> Pubs with Images<br>
-              <input type="checkbox" name="non_existing" value="gone"> Previously known as Pub Locations <br><br>
-              <input type="submit" value="Submit">
-            </form>
-        
-        </p>
+        <div id="selectmenu">
+
         </div>
-        
-        <div id="map">
-            </div>
-        <br> <hline>
     </div>
+
 
 </body>
 
-<div class="footer">
-  <p>Web application made as part of Jelke Joosen's Thesis for the Advanced Master in Digital Humanities at KU Leuven</p>
-</div>
+<footer>
+ <p class="disclaim">Web application made as part of Jelke Joosen's Thesis for the Advanced Master in Digital Humanities at KU Leuven</p>
+ <p class="github"><a class="github-button" href="https://github.com/jelkejl" aria-label="Follow @jelkejl on GitHub">@JelkeJL</a></p>
+</footer>
+
 </html>

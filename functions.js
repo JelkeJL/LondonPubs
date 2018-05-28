@@ -23,7 +23,7 @@ $(function() {
   		console.log("do something");
 	});
 	
-	console.log("asd");
+	console.log("Hello Jelke");
 });
 
 
@@ -36,10 +36,7 @@ var map, infoWindow;
         });
         infoWindow = new google.maps.InfoWindow;
         
-        //var image = 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/129/woman-walking_1f6b6-200d-2640-fe0f.png'
-        //walk = new google.maps.Marker({
-          //icon: image
-        //});
+        
 
 // Try HTML5 geolocation.
         if (navigator.geolocation) {
