@@ -138,6 +138,14 @@ form {
 
 }
 
+#main_data{
+    align: center;
+    background-color: lightgrey;
+    padding: 2%;
+    overflow:auto;
+    margin: 0.5%;
+}
+
 #card {
     align: center;
     background-color: #C8102E;
@@ -145,6 +153,7 @@ form {
     overflow: auto;
     margin: 0.5%;
 }
+
 #card img{
     height: auto;
     float: left;
@@ -227,6 +236,12 @@ footer {
     clear: left;
     text-align: center;
     font-family: sans-serif;
+}
+
+.disclaim {
+    font-family: sans-serif;
+    font-size: 10px;
+    font-variant: normal;
 }
 
 
