@@ -58,14 +58,18 @@ ul {
 /* dimensions of map */
 
 #map {
-    width: 100%;
+    width: 48%;
+    float: left;
     height: 370px;
     background-color: lightgrey;
     margin-bottom: 10px;
     margon-top: 100px;
+    margin-left: 1%;
 }
 
-
+form {
+    font-family: 'Lato', sans-serif;
+}
 
 /* nav bar */
 
@@ -132,6 +136,12 @@ ul {
     text-align: justify;
     position: relative;
 
+}
+
+#selectmenu{
+    width: 48%;
+    float: right;
+    margin: 0.5%;
 }
 
 /* footer */
