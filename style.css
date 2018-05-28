@@ -1,99 +1,36 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+body {
+    margin: 0px;
+    padding: 0px;
+
 }
 
-body{
-    font-size: 10px;
-    width: 960px;
-    font-family: sans-serif;
-    margin: 0 auto;
-    float:;
+#content {
+    padding-top: 70px;
+    margin: 10px;
 }
 
-#bar{
-    display: inline;
-    padding: 10px;
-    border: lightgray;
+select {
+    font-family: 'Lato', sans-serif;
 }
 
-#nav {
-    list-style-type: none;
-    overflow: hidden;
-    background-color: #1D8DB0;
-}
-
-#nav li {
-    float: left;
-    display: inline-block;
-    font-style: normal;
-    font-variant: small-caps;
-    color: white;
-    font-family: tahoma;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px 1%;
-}
-
-#nav ul {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    text-align: left;
-}
-
-#nav img {
-    width: 150px;
-    height: auto;
-    padding: 1;
-    border: 1;
-    margin: 1;
-    float: left;
-}
-
-#nav a {
-    color: white;
-    text-decoration: none;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li img {
-    width: 150px;
-    height: auto;
-    padding: 1;
-    border: 1;
-    margin: 1;
-    float: left;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    align: center;
-}
-
-#map {
-    width: 50%;
-    height: 400px;
-    background-color: lightgrey;
-}
-
-p a{
+h1{
+    font-family: 'Lato', sans-serif;
     color: #1D8DB0;
-    text-decoration: none;
+    font-size: 20px;
+    color: #211109;
+}
+
+h2{
+    font-family: 'Lato', sans-serif;
+    color: #00407A;
+    font-size: 15px;
+    float: center;
+    color: #211109;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    color: #211109;
 }
 
 a:hover{
@@ -104,35 +41,106 @@ a:active{
     text-decoration: underline;
 }
 
-
-h1{
-    font-family: sans-serif;
+p a{
     color: #1D8DB0;
-    font-size: 20px;
-    line-height: 50px;
-
-}
-
-h2{
-    font-family: sans-serif;
-    color: #1D8DB0;
-    font-size: 15px;
-    line-height: 50px;  
-}
-
-form{
-    font-family: sans-serif;
-    color: #1FABD5;
-    font-size: 12px;
-    line-height: 20px;
+    text-decoration: none;
 }
 
 p {
-    font-family: sans-serif;
-    color: #00407A;
-    font-size: 12px;
-    line-height: 20px
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
 }
+
+ol {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+}
+
+ul {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+}
+
+/* dimensions of map */
+
+#map {
+    width: 50%;
+    float: left;
+    height: 550px;
+    background-color: lightgrey;
+    margin-bottom: 10px;
+    margin: 20px;
+}
+
+
+
+/* nav bar */
+
+#nav {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #D93A04;
+    top:0;
+    position: fixed;
+    height: 83px;
+    width:100%;
+    z-index: 999;
+}
+
+#nav li {
+    float: left;
+    display: inline-block;
+    font-style: normal;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0px 1%;
+    margin: 20px 0 0;
+    overflow: visible;
+}
+
+#nav li:first-of-type {
+    margin: 4px 0 0;
+}
+
+#nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    text-align: right;
+    margin: 10px auto;
+    position: relative;
+}
+
+#nav img {
+    width: 100px;
+    height: auto;
+    float: left;
+    vertical-align: middle;
+    overflow: visible;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* footer */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #D93A04;
+    color: white;
+    font-size: 8px;
+    text-align: center;
+}
+
 
 #map_info{
     width: 45%;
@@ -140,12 +148,10 @@ p {
     border: 10px;
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #1D8DB0;
-    color: white;
-    text-align: center;
+form{
+    font-family: sans-serif;
+    color: #EFA058;
+    font-size: 12px;
+    line-height: 20px;
+
 }
