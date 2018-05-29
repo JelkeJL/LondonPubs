@@ -137,8 +137,8 @@ form {
 }
 
 #card {
-    align: center;
-    background-color: #E8E8E8;
+
+    background-color: #C8102E;
     padding: 2%;
     overflow: auto;
     margin: 0.5%;
@@ -207,25 +207,25 @@ form {
     text-decoration: none;
 }
 
-#card2 {
+#data {
     align: center;
-    background-color: #012169;
+    background-color: #E8E8E8;
     padding: 2%;
     border: 1%;
     overflow: auto;
     margin: 0.5%;
 }
 
-#card2 p{
+#data p {
     width: 90%;
-    background: #012169;
+    background: #E8E8E8;
     padding: 1%;
-    color: #FFFFFF;
+    color: #012169;
     margin-right: 0;
     font-size: 1.25em;
 }
 
-#card2 p a{
+#data p a {
     color: #C8102E;
     text-decoration: none;
 }
