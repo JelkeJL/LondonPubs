@@ -7,7 +7,7 @@
     <link rel="stylesheet" media="screen and (max-width:480px)" href="mobile.css">
     <link rel="icon" href="https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/129/desktop-computer_1f5a5.png">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <script src="functions.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -31,18 +31,24 @@
     <div id="main">
 
         <div id="data">
-            <h1>Source of the Main Data Set</h1>
+            <h1>Data Set Sources</h1>
             <p>
-                Initially, the project started with a data set provided by the "National Brewery Heritage Trust". This set – which was available from <a href="https://www.europeana.eu/portal/en/search?q=europeana_collectionName:(2059528_EU_FD_NBHT)&view=grid&source=reuse" target="_blank">Europeana</a> – consisted of a number of old pictures of pubs in London and environs. As <a href="https://www.historypin.org/en/a-history-of-pubs/geo/51.972827,-0.3574,6/bounds/46.944404,-5.408879,56.494154,4.694079/paging/1/project/about" target = "_blank">Local Pub Histories</a> on historypin.org held rough location data for pubs in the UK, and these were used for the application. The latter also mentions a book made with all the pub photograps, which you can find more about on <a href="https://www.londonlocalpubs.com" target="_blank">londonlocalpubs.com</a>.
+                Initially, the project started with a data set provided by the "National Brewery Heritage Trust". This set – which was available from <a href="https://www.europeana.eu/portal/en/search?q=europeana_collectionName:(2059528_EU_FD_NBHT)&view=grid&source=reuse" target="_blank">Europeana</a> – consisted of a number of old pictures of pubs in London and environs. As <a href="https://www.historypin.org/en/a-history-of-pubs/geo/51.972827,-0.3574,6/bounds/46.944404,-5.408879,56.494154,4.694079/paging/1/project/about" target = "_blank">Local Pub Histories</a> on historypin.org held rough location data for pubs in the UK, and these were used for the application. The latter also mentions a book made with all the pub photograps, which you can find more about on <a href="http://unbouncepages.com/londonlocalpubs/" target="_blank">londonlocalpubs.com</a>.
             </p>
             <p>
-                The pictures from <em>Europeana</em> were enriched fetching more images from Flickr and additional information from Foursquare. "Local Pub Histories" proved to be a very valuable source in doing this. In addition, NLP techniques were used to extract addresses and keywords from image descriptions, and Microsoft Computervision helped extract relevant tags for all images. This enriching of the data set – and transformation thereof to a usable .json-file – was done by mr. <a href="https://www.kuleuven.be/wieiswie/en/person/00106755" target"_blank">F. Gutiérrez</a>.
+                The pictures from <em>Europeana</em> were enriched fetching more images from Flickr and additional information from Foursquare. "Local Pub Histories" proved to be a very valuable source in doing this. In addition, NLP techniques were used to extract addresses and keywords from image descriptions, and Microsoft Computervision helped extract relevant tags for all images. This enriching of the data set – and transformation thereof to a usable .json-file – was done by mr. <a href="https://www.kuleuven.be/wieiswie/en/person/00106755" target"_blank">F. Gutiérrez</a>, my thesis mentor.
             </p>
         </div>
 
         <div id="data_img">
             <h1>Basic Data Set Exploration</h1>
             <a href="tableau.html" target="_blank"><img src="images/PubMap.png"></a>
+            <p>
+                Having an overview of the extensiveness of the data set is very important in a project like this one. Therefore, an initial visualization was made using Tableau Public. This visualization simply maps all pubs in London based on coordinates, and enables a user to copy a link that leads to a pub image after clicking a specific Pub marker. You can click the map thumbnail on the right to consult this visualization. This visualization will – when clicked – open in a new tab. 
+            </p>
+            <p>
+                Caution: as the visualization is fetched live from Tableau Public, loading the page may take some time.
+            </p>
         </div>
 
     </div>

@@ -209,9 +209,8 @@ form {
 #data {
     background-color: #E8E8E8;
     padding: 2%;
-    border: 1%;
     overflow: auto;
-    margin: 0.5%;
+    margin: 1%;
 }
 
 #data p {
@@ -232,9 +231,8 @@ form {
 
     background-color: #E8E8E8;
     padding: 2%;
-    border: 1%;
     overflow: auto;
-    margin: 0.5%;
+    margin: 1%;
 }
 
 #data_img img{
@@ -252,7 +250,7 @@ form {
     padding: 1%;
     color: #012169;
     margin-left: 0;
-    font-size: 1.25em;
+    font-size: 100%;
 }
 
 #data_img p a{
