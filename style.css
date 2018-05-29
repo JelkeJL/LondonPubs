@@ -169,7 +169,6 @@ form {
 }
 
 #London {
-    align: center;
     background-color: #012169;
     padding: 2%;
     border: 1%;
@@ -208,7 +207,6 @@ form {
 }
 
 #data {
-    align: center;
     background-color: #E8E8E8;
     padding: 2%;
     border: 1%;
@@ -222,11 +220,43 @@ form {
     padding: 1%;
     color: #012169;
     margin-right: 0;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 #data p a {
     color: #C8102E;
+    text-decoration: none;
+}
+
+#data_img {
+
+    background-color: #E8E8E8;
+    padding: 2%;
+    border: 1%;
+    overflow: auto;
+    margin: 0.5%;
+}
+
+#data_img img{
+    height: auto;
+    float: right;
+    width: 30%;
+    padding: 1%;
+    background-color: #FFFFFF;
+}
+
+#data_img p{
+    float: left;
+    width: 65%;
+    background: #E8E8E8;
+    padding: 1%;
+    color: #012169;
+    margin-left: 0;
+    font-size: 1.25em;
+}
+
+#data_img p a{
+    color: #FFFFFF;
     text-decoration: none;
 }
 
