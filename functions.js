@@ -20,8 +20,17 @@ $(function() {
 	});
 
 	$(".foursquare").click(function() {
-  		console.log("do something");
+  		console.log("user would like foursquare-rated pubs");
 	});
+  $(".near").click(function() {
+      console.log("user would like pubs nearby");
+  });
+  $(".photo").click(function() {
+      console.log("user would like pubs with photo");
+  });
+  $(".gone").click(function() {
+      console.log("user would pubs that no longer exist");
+  });
 	
 	console.log("Hello Jelke");
 });
