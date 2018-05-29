@@ -8,9 +8,11 @@ $(function() {
 
      $(".foursquare").click(function() {
       console.log("user would like foursquare-rated pubs");
-      for (var i = 0; i < 10; i++) {
-        var fs = json.data[i]
-        console.log(fs[" rate_foursquare"])};
+      for (var i = 0; i < json.data.length; i++) {
+        var item = json.data[i];
+        //console.log(item[" rate_foursquare"])};
+        var fs = item[" rate_foursquare"]
+      }
     
     });
     $(".near").click(function() {
