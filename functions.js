@@ -10,7 +10,7 @@ $(function() {
       console.log("user would like foursquare-rated pubs");
       for (var i = 0; i < 10; i++) {
         var fs = json.data[i]
-        console.log(fs)};
+        console.log(fs[" rate_foursquare"])};
     
     });
     $(".near").click(function() {
