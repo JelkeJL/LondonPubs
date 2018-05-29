@@ -24,7 +24,7 @@ h3 {
     font-family: 'Lato', sans-serif;
     color: #C8102E;
 }
-/*
+
 a:hover{
     text-decoration: underline;
 }
@@ -32,9 +32,9 @@ a:hover{
 a:active{
     text-decoration: underline;
 }
-*/
+
 p a{
-    color: #1D8DB0;
+    color: #C8102E;
     text-decoration: none;
 }
 
@@ -126,7 +126,7 @@ form {
     color: #C8102E;
 }
 
-/* home page */
+
 #main {
     margin-top: 120px;
     margin-bottom: 120px;
@@ -134,16 +134,6 @@ form {
     justify-content: space-around;
     text-align: justify;
     position: relative;
-
-
-}
-
-#main_data{
-    align: center;
-    background-color: lightgrey;
-    padding: 2%;
-    overflow:auto;
-    margin: 0.5%;
 }
 
 #card {
@@ -215,6 +205,29 @@ form {
 #London p a{
     color: #C8102E;
     text-decoration: none;
+}
+
+#data{
+    align: center;
+    background-color: #E8E8E8;
+    padding: 2%;
+    overflow:auto;
+    margin: 0.5%;
+}
+
+#data p{
+    width: 95%;
+    background: #E8E8E8;
+    padding: 1%;
+    color: #012169;
+    font-family: 'Pompiere', cursive;
+    margin-left: 0;
+    font-size: 1.25em;
+}
+
+#data p a{
+    color: #FFFFFF;
+    text-decoration: none;  
 }
 
 #selectmenu{
