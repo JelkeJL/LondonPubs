@@ -1,38 +1,30 @@
 
-/*
-function initMap() {
-    var GH_london = {lat: 51.6633, lng: -0.0923};
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 9,
-        center: GH_london
-    });
-    var marker = new google.maps.Marker({
-        position: GH_london,
-        map: map
-    });
-}
-*/
 $(function() {
 
 	$.getJSON("data.json", function(json) {
    	 console.log(json); // this will show the info it in firebug console
      console.log(json.data.length);
+
+
+     $(".foursquare").click(function() {
+      console.log("user would like foursquare-rated pubs");
+      for (var i = 0; i < 10; i++) {
+        var fs = json.data[i]
+        console.log(fs)};
+    
+    });
+    $(".near").click(function() {
+      console.log("user would like pubs nearby");
+    });
+    $(".photo").click(function() {
+      console.log("user would like pubs with photo");
+    });
+    $(".gone").click(function() {
+      console.log("user would pubs that no longer exist");
+    });
+     
 	});
 
-	$(".foursquare").click(function() {
-  		console.log("user would like foursquare-rated pubs");
-	});
-  $(".near").click(function() {
-      console.log("user would like pubs nearby");
-  });
-  $(".photo").click(function() {
-      console.log("user would like pubs with photo");
-  });
-  $(".gone").click(function() {
-      console.log("user would pubs that no longer exist");
-  });
-	
-	console.log("Hello Jelke");
 });
 
 
@@ -90,3 +82,5 @@ var map, infoWindow;
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map,marker);
       }
+
+
