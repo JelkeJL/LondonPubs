@@ -258,6 +258,25 @@ form {
     text-decoration: none;
 }
 
+#thesis{
+    margin: 1.5%;
+    overflow: auto;
+    width: 45%;
+    float: left;
+
+}
+
+#thesis img{
+    width: 95%;
+    height: auto;
+
+}
+
+#subject{
+    width: 45%;
+    float: right;
+}
+
 #selectmenu{
     width: 47%;
     float: right;
