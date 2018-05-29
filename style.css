@@ -138,7 +138,7 @@ form {
 
 #card {
     align: center;
-    background-color: #C8102E;
+    background-color: #E8E8E8;
     padding: 2%;
     overflow: auto;
     margin: 0.5%;
@@ -207,27 +207,27 @@ form {
     text-decoration: none;
 }
 
-#data{
+#card2 {
     align: center;
-    background-color: #E8E8E8;
+    background-color: #012169;
     padding: 2%;
-    overflow:auto;
+    border: 1%;
+    overflow: auto;
     margin: 0.5%;
 }
 
-#data p{
-    width: 95%;
-    background: #E8E8E8;
+#card2 p{
+    width: 90%;
+    background: #012169;
     padding: 1%;
-    color: #012169;
-    font-family: 'Pompiere', cursive;
-    margin-left: 0;
+    color: #FFFFFF;
+    margin-right: 0;
     font-size: 1.25em;
 }
 
-#data p a{
-    color: #FFFFFF;
-    text-decoration: none;  
+#card2 p a{
+    color: #C8102E;
+    text-decoration: none;
 }
 
 #selectmenu{
