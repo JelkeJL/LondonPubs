@@ -135,7 +135,7 @@ form {
     size: relative;
     height: 10vh;
     width:100%;
-    z-index: 999;
+    z-index: 998;
     text-transform: uppercase;
 }
 
@@ -150,6 +150,7 @@ form {
     padding: 0px 1%;
     margin: 20px 0 0;
     overflow: visible;
+    z-index: 999;
 }
 
 #nav li:first-of-type {
@@ -194,6 +195,7 @@ form {
     justify-content: space-around;
     text-align: justify;
     position: relative;
+    z-index: 900;
 }
 
 #card {
@@ -202,6 +204,7 @@ form {
     padding: 2%;
     overflow: auto;
     margin: 0.5%;
+    border-radius: 25px;
 }
 
 #card img{
@@ -234,6 +237,7 @@ form {
     border: 1%;
     overflow: auto;
     margin: 0.5%;
+    border-radius: 25px;
 }
 #London img{
     height: auto;
@@ -271,6 +275,7 @@ form {
     padding: 2%;
     overflow: auto;
     margin: 1%;
+    border-radius: 25px;
 }
 
 #data p {
@@ -293,6 +298,7 @@ form {
     padding: 2%;
     overflow: auto;
     margin: 1%;
+    border-radius: 25px;
 }
 
 #data_img img{
@@ -350,6 +356,7 @@ footer {
     clear: left;
     text-align: center;
     font-family: sans-serif;
+    z-index: 999;
 }
 
 .disclaim {
