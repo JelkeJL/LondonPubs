@@ -32,8 +32,9 @@ var map, infoWindow;
              console.log(json); // this will show the info it in firebug console
              console.log(json.data.length);
         
-        
-             $(".foursquare").click(function() {
+
+             //$(".foursquare").click(function() {
+            $(".foursquare").off('click').on('click', function(){
               console.log("user would like foursquare-rated pubs");
               for (var i = 0; i < json.data.length; i++) {
                 var item = json.data[i];

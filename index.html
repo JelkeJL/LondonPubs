@@ -41,13 +41,26 @@
             </p>
             <h2>Selection criteria</h2>
             <p>
-            <form>
+<!--            <form>
               <input class="foursquare" type="checkbox" name="exists" value="existing"> Foursquare-rated Pubs<br>
               <input class ="near" type="checkbox" name="vicinity" value="near"> Pubs Close to Me<br>
               <input class ="photo" type="checkbox" name="image" value="has_photo"> Pubs with Images<br>
               <input class = "gone" type="checkbox" name="non_existing" value="gone"> Previously known as Pub Locations <br><br>
               
             </form>
+-->            
+            
+            <div class="custom-select"  style="width:1000px;">
+                <select>
+
+                    <option value="foursquare">Foursquare-rated Pubs</option>
+                    <option value="near">Pubs Near Me</option>
+                    <option value="photo">Pubs with an Image</option>
+                    <option value="gone">Pubs that are (Possibly) Gone</option>
+
+                 </select>
+            </div>
+
             </p>
         </div>
 
@@ -64,6 +77,7 @@
                 <div id="pub_name"></div>
                 <div id="pub_address"></div>
                 <div id="pub_description>"></div>
+                <div id="rating"></div>
             </div>
 
         </div>
