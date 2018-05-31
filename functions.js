@@ -1,36 +1,3 @@
-
-$(function() {
-
-	$.getJSON("data.json", function(json) {
-   	 console.log(json); // this will show the info it in firebug console
-     console.log(json.data.length);
-
-
-     $(".foursquare").click(function() {
-      console.log("user would like foursquare-rated pubs");
-      for (var i = 0; i < json.data.length; i++) {
-        var item = json.data[i];
-        //console.log(item[" rate_foursquare"])};
-        var fs = item[" rate_foursquare"]
-      }
-    
-    });
-    $(".near").click(function() {
-      console.log("user would like pubs nearby");
-    });
-    $(".photo").click(function() {
-      console.log("user would like pubs with photo");
-    });
-    $(".gone").click(function() {
-      console.log("user would pubs that no longer exist");
-    });
-     
-	});
-
-});
-
-
-
 var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -76,6 +43,37 @@ var map, infoWindow;
 
 
       }
+
+
+      $(function() {
+      
+        $.getJSON("data.json", function(json) {
+           console.log(json); // this will show the info it in firebug console
+           console.log(json.data.length);
+      
+      
+           $(".foursquare").click(function() {
+            console.log("user would like foursquare-rated pubs");
+            for (var i = 0; i < json.data.length; i++) {
+              var item = json.data[i];
+              //console.log(item[" rate_foursquare"])};
+              var fs = item[" rate_foursquare"]
+            }
+          
+          });
+          $(".near").click(function() {
+            console.log("user would like pubs nearby");
+          });
+          $(".photo").click(function() {
+            console.log("user would like pubs with photo");
+          });
+          $(".gone").click(function() {
+            console.log("user would pubs that no longer exist");
+          });
+           
+        });
+      
+      });
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
