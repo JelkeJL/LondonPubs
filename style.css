@@ -89,11 +89,11 @@ form {
 
 #photo_pub{
     font-family: sans-serif;
-    width: 40%;
+    height: 40%;
     margin: 1%;
     background: white;
     padding: 1%;
-    float: left;
+    float: top;
     border-radius: 25px;
 }
 
@@ -114,11 +114,11 @@ form {
 }
 
 #pub_details{
-    width: 40%;
+    height: 40%;
     margin: 1%;
     background: white;
     padding: 1%;
-    float: right;
+    float: bottom;
     font-family: sans-serif;
     border-radius: 25px;
 }
