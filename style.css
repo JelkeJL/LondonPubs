@@ -50,6 +50,10 @@ ol {
     font-size: 13px;
 }
 
+em {
+    font-size: small;
+}
+
 
 #map {
     width: 90%;
@@ -84,6 +88,7 @@ form {
     overflow: auto;
     padding: 2%;
     border-radius: 25px;
+    display: none;
 }
 
 
