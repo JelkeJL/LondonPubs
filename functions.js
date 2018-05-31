@@ -24,7 +24,29 @@ var map, infoWindow;
               icon: pint
             });
 
-          };
+        };
+
+        // http://snipplr.com/view/25479/calculate-distance-between-two-points-with-latitude-and-longitude-coordinates/
+        //calc distance between locations
+        function distance(lat1,lon1,lat2,lon2) {
+          var R = 6371; // km (change this constant to get miles)
+          var dLat = (lat2-lat1) * Math.PI / 180;
+          var dLon = (lon2-lon1) * Math.PI / 180;
+
+          var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180 ) * Math.cos(lat2 * Math.PI / 180 ) *
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+
+          var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+          var d = R * c;
+
+          if (d>1) return Math.round(d)+"km";
+          else if (d<=1) return Math.round(d*1000)+"m";
+          return d;
+
+        };
+
+        console.log(distance(51.6633,-0.0923,51.514208,-0.116286))
 
         $(function() {
         
@@ -33,25 +55,19 @@ var map, infoWindow;
              console.log(json.data.length);
         
 
-             //$(".foursquare").click(function() {
-            $(".foursquare").off('click').on('click', function(){
-              console.log("user would like foursquare-rated pubs");
-              for (var i = 0; i < json.data.length; i++) {
-                var item = json.data[i];
-                //console.log(item[" rate_foursquare"])};
-                var fs = item[" rate_foursquare"]
-              }
-            
-            });
-            $(".near").click(function() {
-              console.log("user would like pubs nearby");
-            });
-            $(".photo").click(function() {
-              console.log("user would like pubs with photo");
-            });
-            $(".gone").click(function() {
-              console.log("user would like pubs that no longer exist");
-            });
+             $('#criterium').bind('change', function (e){
+               if ($('#criterium').val() == 'empty'){
+                 console.log("empty");
+               } else if ($('#criterium').val() == 'foursquare'){
+                console.log('foursquare');
+               } else if ($('#criterium').val() == 'near'){
+                console.log('near');
+               } else if ($('#criterium').val() == 'photo'){
+                console.log('photo');
+               } else if ($('#criterium').val() == 'gone'){
+                console.log('gone');
+               }
+             }).trigger('change');
              
           });
         
