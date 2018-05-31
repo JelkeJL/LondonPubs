@@ -4,7 +4,38 @@ var map, infoWindow;
           center: {lat: 51.6633, lng: -0.0923},
           zoom: 15
         });
+        
         infoWindow = new google.maps.InfoWindow;
+
+        $(function() {
+        
+          $.getJSON("data.json", function(json) {
+             console.log(json); // this will show the info it in firebug console
+             console.log(json.data.length);
+        
+        
+             $(".foursquare").click(function() {
+              console.log("user would like foursquare-rated pubs");
+              for (var i = 0; i < json.data.length; i++) {
+                var item = json.data[i];
+                //console.log(item[" rate_foursquare"])};
+                var fs = item[" rate_foursquare"]
+              }
+            
+            });
+            $(".near").click(function() {
+              console.log("user would like pubs nearby");
+            });
+            $(".photo").click(function() {
+              console.log("user would like pubs with photo");
+            });
+            $(".gone").click(function() {
+              console.log("user would pubs that no longer exist");
+            });
+             
+          });
+        
+        });
         
         
 
@@ -43,37 +74,6 @@ var map, infoWindow;
 
 
       }
-
-
-      $(function() {
-      
-        $.getJSON("data.json", function(json) {
-           console.log(json); // this will show the info it in firebug console
-           console.log(json.data.length);
-      
-      
-           $(".foursquare").click(function() {
-            console.log("user would like foursquare-rated pubs");
-            for (var i = 0; i < json.data.length; i++) {
-              var item = json.data[i];
-              //console.log(item[" rate_foursquare"])};
-              var fs = item[" rate_foursquare"]
-            }
-          
-          });
-          $(".near").click(function() {
-            console.log("user would like pubs nearby");
-          });
-          $(".photo").click(function() {
-            console.log("user would like pubs with photo");
-          });
-          $(".gone").click(function() {
-            console.log("user would pubs that no longer exist");
-          });
-           
-        });
-      
-      });
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
