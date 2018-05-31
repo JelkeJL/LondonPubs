@@ -4,8 +4,27 @@ var map, infoWindow;
           center: {lat: 51.6633, lng: -0.0923},
           zoom: 15
         });
-        
+
         infoWindow = new google.maps.InfoWindow;
+
+        function addPubtoMap(a,b){
+
+            var addmarker = {lat: a, lng: b};
+
+            var pint = {
+              url: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/129/beer-mug_1f37a.png',
+              scaledSize: new google.maps.Size(20,20),
+              origin: new google.maps.Point(0,0),
+              anchor: new google.maps.Point(0,0),
+            };
+
+            var newmarker = new google.maps.Marker({
+              position: addmarker,
+              map: map,
+              icon: pint
+            });
+
+          };
 
         $(function() {
         
@@ -30,7 +49,7 @@ var map, infoWindow;
               console.log("user would like pubs with photo");
             });
             $(".gone").click(function() {
-              console.log("user would pubs that no longer exist");
+              console.log("user would like pubs that no longer exist");
             });
              
           });
@@ -54,7 +73,7 @@ var map, infoWindow;
 
           var image = {
             url : 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/flag-for-united-kingdom_1f1ec-1f1e7.png',
-            scaledSize: new google.maps.Size(25, 25), // scaled size
+            scaledSize: new google.maps.Size(15, 15), // scaled size
             origin: new google.maps.Point(0,0), // origin
             anchor: new google.maps.Point(0, 0), // anchor
           }
