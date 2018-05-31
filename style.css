@@ -389,3 +389,12 @@ footer {
     margin-bottom: 0;
     /*margin-right: 0.2;*/
 }
+
+
+u {
+    text-decoration: underline;
+}
+
+.custom_select{
+    width: 40%;
+}
