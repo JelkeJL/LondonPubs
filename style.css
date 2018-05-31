@@ -205,6 +205,7 @@ form {
     overflow: auto;
     margin: 0.5%;
     border-radius: 25px;
+    opacity: 0.85;
 }
 
 #card img{
@@ -238,6 +239,7 @@ form {
     overflow: auto;
     margin: 0.5%;
     border-radius: 25px;
+    opacity: 0.85;
 }
 #London img{
     height: auto;
@@ -347,10 +349,12 @@ form {
 
 footer {
     position: fixed;
-    width: 100%;
+    width: 99%;
+    margin: 0.5%;
     bottom: 0;
     left: 0;
-    padding: 0.75em;
+    right: 0;
+    padding: 1%;
     color: grey;
     background-color: white;
     clear: left;
@@ -377,4 +381,5 @@ footer {
     float: left;
     margin-top: 0;
     margin-bottom: 0;
+    /*margin-right: 0.2;*/
 }
