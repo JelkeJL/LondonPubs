@@ -13,7 +13,7 @@ var map, infoWindow;
 
             var pint = {
               url: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/129/beer-mug_1f37a.png',
-              scaledSize: new google.maps.Size(20,20),
+              scaledSize: new google.maps.Size(10,10),
               origin: new google.maps.Point(0,0),
               anchor: new google.maps.Point(0,0),
             };
@@ -28,25 +28,28 @@ var map, infoWindow;
 
         // http://snipplr.com/view/25479/calculate-distance-between-two-points-with-latitude-and-longitude-coordinates/
         //calc distance between locations
-        function distance(lat1,lon1,lat2,lon2) {
+        function vicinity(ltA,lnA,ltB,lnB) {
           var R = 6371; // km (change this constant to get miles)
-          var dLat = (lat2-lat1) * Math.PI / 180;
-          var dLon = (lon2-lon1) * Math.PI / 180;
+          var dLat = (ltB-ltA) * Math.PI / 180;
+          var dLon = (lnB-lnA) * Math.PI / 180;
 
           var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.cos(lat1 * Math.PI / 180 ) * Math.cos(lat2 * Math.PI / 180 ) *
+            Math.cos(ltA * Math.PI / 180 ) * Math.cos(ltB * Math.PI / 180 ) *
             Math.sin(dLon/2) * Math.sin(dLon/2);
 
           var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
           var d = R * c;
 
-          if (d>1) return Math.round(d)+"km";
-          else if (d<=1) return Math.round(d*1000)+"m";
-          return d;
+          if (d>1) {
+            console.log("Further than 1km");
+          } else if (d<=1) {
+            console.log("within Walking Distance")
+            addPubtoMap(ltB,lnB)};
 
         };
 
-        console.log(distance(51.6633,-0.0923,51.514208,-0.116286))
+        //vicinity(51.6633,-0.0923,51.514208,-0.116286) //further than 1km
+        vicinity(51.514207,-0.116286,51.514208,-0.116286) //closer than 1km
 
         $(function() {
         
