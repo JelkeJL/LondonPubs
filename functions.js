@@ -31,8 +31,6 @@ var map, infoWindow;
 
         // http://snipplr.com/view/25479/calculate-distance-between-two-points-with-latitude-and-longitude-coordinates/
         //calc distance between locations
-
-
         function vicinity(lt,ln) {
           navigator.geolocation.getCurrentPosition(function(position){
               var here_lat = position.coords.latitude;
@@ -63,6 +61,51 @@ var map, infoWindow;
         };
 
         //vicinity(51.514208,-0.116286)
+
+        $(function() {
+        
+          $.getJSON("data.json", function(json) {
+             //console.log(json); // this will show the info it in firebug console
+             //console.log(json.data.length);
+        
+
+             $('#criterium').bind('change', function (e){
+
+               if ($('#criterium').val() == 'empty'){
+                 console.log("empty");
+
+               } else if ($('#criterium').val() == 'foursquare'){
+                console.log('foursquare');
+
+                for (var i = 0; i < json.data.length; i++) {
+
+                  var item = json.data[i];
+                  //console.log(item[" rate_foursquare"]);
+                  var fs = item[" rate_foursquare"]
+                  if (fs != "null"){
+                    //console.log(fs)
+
+                    pub_lat = item["location.lat"]
+                    pub_lng = item["location.lng"]
+                    //console.log(pub_lat, pub_lng)
+
+                    vicinity(pub_lat,pub_lng)
+                  }
+
+                }
+
+               } else if ($('#criterium').val() == 'near'){
+                console.log('near');
+               } else if ($('#criterium').val() == 'photo'){
+                console.log('photo');
+               } else if ($('#criterium').val() == 'gone'){
+                console.log('gone');
+               }
+             }).trigger('change');
+             
+          });
+        
+        });        
 
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -109,79 +152,4 @@ var map, infoWindow;
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map,marker);
       } 
-
-        $(function() {
-        
-          $.getJSON("data.json", function(json) {
-             //console.log(json); // this will show the info it in firebug console
-             //console.log(json.data.length);
-        
-
-             $('#criterium').bind('change', function (e){
-               if ($('#criterium').val() == 'empty'){
-                 console.log("empty");
-               } else if ($('#criterium').val() == 'foursquare'){
-                console.log('foursquare');
-               } else if ($('#criterium').val() == 'near'){
-                console.log('near');
-               } else if ($('#criterium').val() == 'photo'){
-                console.log('photo');
-               } else if ($('#criterium').val() == 'gone'){
-                console.log('gone');
-               }
-             }).trigger('change');
-             
-          });
-        
-        });
-        
-        
-/*
-// Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-           infoWindow.setPosition(pos);
-           infoWindow.setContent('You are here.');
-           infoWindow.open(map);
-            map.setCenter(pos);
-
-          var image = {
-            url : 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/flag-for-united-kingdom_1f1ec-1f1e7.png',
-            scaledSize: new google.maps.Size(15, 15), // scaled size
-            origin: new google.maps.Point(0,0), // origin
-            anchor: new google.maps.Point(0, 0), // anchor
-          }
-          var marker = new google.maps.Marker({
-            position: pos,
-            map:map,
-            icon: image,
-          });
-
-          console.log(pos.lat, pos.lng)
-
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-
-
-      }
-
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map,marker);
-      }
-*/
 
