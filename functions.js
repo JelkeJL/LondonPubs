@@ -5,7 +5,7 @@ var map, infoWindow;
           zoom: 15
         });
 
-        infoWindow = new google.maps.InfoWindow;
+        infoWindow = new google.maps.InfoWindow;       
 
         function addPubtoMap(a,b){
 
@@ -22,34 +22,93 @@ var map, infoWindow;
               position: addmarker,
               map: map,
               icon: pint
+
             });
 
         };
 
+
+
         // http://snipplr.com/view/25479/calculate-distance-between-two-points-with-latitude-and-longitude-coordinates/
         //calc distance between locations
-        function vicinity(ltA,lnA,ltB,lnB) {
-          var R = 6371; // km (change this constant to get miles)
-          var dLat = (ltB-ltA) * Math.PI / 180;
-          var dLon = (lnB-lnA) * Math.PI / 180;
 
-          var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.cos(ltA * Math.PI / 180 ) * Math.cos(ltB * Math.PI / 180 ) *
-            Math.sin(dLon/2) * Math.sin(dLon/2);
 
-          var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-          var d = R * c;
+        function vicinity(lt,ln) {
+          navigator.geolocation.getCurrentPosition(function(position){
+              var here_lat = position.coords.latitude;
+              var here_lng = position.coords.longitude;
 
-          if (d>1) {
-            console.log("Further than 1km");
-          } else if (d<=1) {
-            console.log("within Walking Distance")
-            addPubtoMap(ltB,lnB)};
+              console.log(here_lat, here_lng)
 
+              var R = 6371; // km (change this constant to get miles)
+              var dLat = (lt-here_lat) * Math.PI / 180;
+              var dLon = (ln-here_lng) * Math.PI / 180;
+    
+              var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(here_lat * Math.PI / 180 ) * Math.cos(lt * Math.PI / 180 ) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+    
+              var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+              var d = R * c;
+    
+              if (d>1) {
+                console.log("Further than 1km");
+              } else if (d<=1) {
+                console.log("within Walking Distance")
+                addPubtoMap(lt,ln)
+              };
+
+            })
+          
         };
 
-        //vicinity(51.6633,-0.0923,51.514208,-0.116286) //further than 1km
-        vicinity(51.514207,-0.116286,51.514208,-0.116286) //closer than 1km
+        //vicinity(51.514208,-0.116286)
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+           infoWindow.setPosition(pos);
+           infoWindow.setContent('You are here.');
+           infoWindow.open(map);
+            map.setCenter(pos);
+
+          var image = {
+            url : 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/flag-for-united-kingdom_1f1ec-1f1e7.png',
+            scaledSize: new google.maps.Size(15, 15), // scaled size
+            origin: new google.maps.Point(0,0), // origin
+            anchor: new google.maps.Point(0, 0), // anchor
+          }
+          var marker = new google.maps.Marker({
+            position: pos,
+            map:map,
+            icon: image,
+          });
+
+          console.log(pos.lat, pos.lng)
+
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+
+
+      }
+
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map,marker);
+      } 
 
         $(function() {
         
@@ -77,7 +136,7 @@ var map, infoWindow;
         });
         
         
-
+/*
 // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -103,6 +162,8 @@ var map, infoWindow;
             icon: image,
           });
 
+          console.log(pos.lat, pos.lng)
+
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -114,6 +175,7 @@ var map, infoWindow;
 
       }
 
+
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
@@ -121,5 +183,5 @@ var map, infoWindow;
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map,marker);
       }
-
+*/
 
