@@ -25,6 +25,10 @@ var map, infoWindow;
 
             });
 
+            newmarker.addListener('click', function() {
+              console.log("this is when the magic happens")
+            });            
+
         };
 
         function addPhototoMap(a,b){
@@ -44,6 +48,11 @@ var map, infoWindow;
               icon: photo
 
             });
+
+            newmarker.addListener('click', function() {
+              map.setZoom(8);
+              map.setCenter(marker.getPosition());
+            });  
 
         };
 
@@ -72,8 +81,8 @@ var map, infoWindow;
     
               if (d>1) {
                 console.log("Further than 1km");
-                //line added and commented out to check if adding the markers worked
-                //addPubtoMap(lt,ln);
+//!!!           line added and commented out to check if adding the markers worked
+                addPubtoMap(lt,ln);
 
                 if (exists == "gone"){
                   addPhototoMap(lt,ln)
