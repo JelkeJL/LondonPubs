@@ -127,6 +127,49 @@ var map, infoWindow;
           
         };
 
+        function refresh(){
+          map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 51.6633, lng: -0.0923},
+          zoom: 15
+          });
+
+          if (navigator.geolocation) {
+  
+            navigator.geolocation.getCurrentPosition(function(position) {
+  
+              var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+  
+             infoWindow.setPosition(pos);
+             infoWindow.setContent('You are here.');
+             infoWindow.open(map);
+              map.setCenter(pos);
+  
+            var image = {
+              url : 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/flag-for-united-kingdom_1f1ec-1f1e7.png',
+              scaledSize: new google.maps.Size(15, 15), // scaled size
+              origin: new google.maps.Point(0,0), // origin
+              anchor: new google.maps.Point(0, 0), // anchor
+            }
+            var marker = new google.maps.Marker({
+              position: pos,
+              map:map,
+              icon: image,
+            });
+  
+            }, function() {
+              handleLocationError(true, infoWindow, map.getCenter());
+            });
+  
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+
+          }
+        }
+
 
         //vicinity(51.514208,-0.116286)
 
@@ -141,9 +184,11 @@ var map, infoWindow;
 
                if ($('#criterium').val() == 'empty'){
                  console.log("empty");
+                 refresh()
 
                } else if ($('#criterium').val() == 'foursquare'){
                 //console.log('foursquare');
+                refresh()
 
                 for (var i = 0; i < json.data.length; i++) {
 
@@ -164,6 +209,7 @@ var map, infoWindow;
 
                } else if ($('#criterium').val() == 'near'){
                 //console.log('near');
+                refresh()
                 for (var i = 0; i < json.data.length; i++) {
 
                   var item = json.data[i];
@@ -179,6 +225,7 @@ var map, infoWindow;
 
                } else if ($('#criterium').val() == 'photo'){
                 //console.log('photo');
+                refresh()
 
                 for (var i = 0; i < json.data.length; i++) {
 
@@ -199,6 +246,7 @@ var map, infoWindow;
 
                } else if ($('#criterium').val() == 'gone'){
                 //console.log('gone');
+                refresh()
 
                 for (var i = 0; i < json.data.length; i++) {
 
