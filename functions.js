@@ -64,6 +64,38 @@ var map, infoWindow;
         };
 
 
+        function nearby(lt,ln) {
+          navigator.geolocation.getCurrentPosition(function(position){
+              var here_lat = position.coords.latitude;
+              var here_lng = position.coords.longitude;
+              //console.log(position)
+
+              //console.log(here_lat, here_lng)
+
+              var R = 6371; 
+              var dLat = (lt-here_lat) * Math.PI / 180;
+              var dLon = (ln-here_lng) * Math.PI / 180;
+    
+              var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(here_lat * Math.PI / 180 ) * Math.cos(lt * Math.PI / 180 ) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+    
+              var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+              var d = R * c;
+    
+              if (d>5) {
+                console.log("Further than 5km");
+                //line added and commented out to check if adding the markers worked
+                addPubtoMap(lt,ln);
+              } else if (d<=5) {
+                console.log("within Walking Distance");
+                addPubtoMap(lt,ln);
+              };
+
+            })
+          
+        };
+
 
         //vicinity(51.514208,-0.116286)
 
@@ -80,7 +112,7 @@ var map, infoWindow;
                  console.log("empty");
 
                } else if ($('#criterium').val() == 'foursquare'){
-                console.log('foursquare');
+                //console.log('foursquare');
 
                 for (var i = 0; i < json.data.length; i++) {
 
@@ -92,7 +124,7 @@ var map, infoWindow;
 
                     pub_lat = parseFloat(item["location.lat"])
                     pub_lng = parseFloat(item["location.lng"])
-                    console.log(pub_lat, pub_lng)
+                    //console.log(pub_lat, pub_lng)
 
                     vicinity(pub_lat,pub_lng)
                   }
@@ -100,7 +132,19 @@ var map, infoWindow;
                 }
 
                } else if ($('#criterium').val() == 'near'){
-                console.log('near');
+                //console.log('near');
+                for (var i = 0; i < json.data.length; i++) {
+
+                  var item = json.data[i];
+                  //console.log(item[" rate_foursquare"]);
+
+                    pub_lat = parseFloat(item["location.lat"])
+                    pub_lng = parseFloat(item["location.lng"])
+                    //console.log(pub_lat, pub_lng)
+
+                    nearby(pub_lat,pub_lng)
+                  
+                }
                } else if ($('#criterium').val() == 'photo'){
                 console.log('photo');
                } else if ($('#criterium').val() == 'gone'){
