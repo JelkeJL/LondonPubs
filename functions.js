@@ -36,7 +36,7 @@ var map, infoWindow;
   
                    console.log(name)
 
-                  //document.getElementById("pub_name").innerHTML = name
+                  document.getElementById("pub_name").innerHTML = name
                   //$('#output').show()
 
 
