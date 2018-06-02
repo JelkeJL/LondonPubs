@@ -13,7 +13,7 @@ var map, infoWindow;
 
             var pint = {
               url: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/129/beer-mug_1f37a.png',
-              scaledSize: new google.maps.Size(10,10),
+              scaledSize: new google.maps.Size(13,13),
               origin: new google.maps.Point(0,0),
               anchor: new google.maps.Point(0,0),
             };
@@ -27,11 +27,31 @@ var map, infoWindow;
 
         };
 
+        function addPhototoMap(a,b){
+
+            var addmarker = {lat: a, lng: b};
+
+            var photo = {
+              url: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/129/camera_1f4f7.png',
+              scaledSize: new google.maps.Size(15,15),
+              origin: new google.maps.Point(0,0),
+              anchor: new google.maps.Point(0,0),
+            };
+
+            var newmarker = new google.maps.Marker({
+              position: addmarker,
+              map: map,
+              icon: photo
+
+            });
+
+        };
+
 
 
         // http://snipplr.com/view/25479/calculate-distance-between-two-points-with-latitude-and-longitude-coordinates/
         //calc distance between locations
-        function vicinity(lt,ln) {
+        function vicinity(lt,ln, exists) {
           navigator.geolocation.getCurrentPosition(function(position){
               var here_lat = position.coords.latitude;
               var here_lng = position.coords.longitude;
@@ -54,9 +74,20 @@ var map, infoWindow;
                 console.log("Further than 1km");
                 //line added and commented out to check if adding the markers worked
                 //addPubtoMap(lt,ln);
+
+                if (exists == "gone"){
+                  addPhototoMap(lt,ln)
+                }
+
               } else if (d<=1) {
                 console.log("within Walking Distance");
-                addPubtoMap(lt,ln);
+
+                if (exists == "beer"){
+                  addPubtoMap(lt,ln);
+                } else if (exists == "gone"){
+                  addPhototoMap(lt,ln)
+                }
+                
               };
 
             })
@@ -126,7 +157,7 @@ var map, infoWindow;
                     pub_lng = parseFloat(item["location.lng"])
                     //console.log(pub_lat, pub_lng)
 
-                    vicinity(pub_lat,pub_lng)
+                    vicinity(pub_lat,pub_lng,"beer")
                   }
 
                 }
@@ -145,10 +176,47 @@ var map, infoWindow;
                     nearby(pub_lat,pub_lng)
                   
                 }
+
                } else if ($('#criterium').val() == 'photo'){
-                console.log('photo');
+                //console.log('photo');
+
+                for (var i = 0; i < json.data.length; i++) {
+
+                  var item = json.data[i];
+                  //console.log(item[" rate_foursquare"]);
+                  var fs = item["display.content"]
+                  if (fs != "null"){
+                    //console.log(fs)
+
+                    pub_lat = parseFloat(item["location.lat"])
+                    pub_lng = parseFloat(item["location.lng"])
+                    //console.log(pub_lat, pub_lng)
+
+                    vicinity(pub_lat,pub_lng)
+                  }
+
+                }
+
                } else if ($('#criterium').val() == 'gone'){
-                console.log('gone');
+                //console.log('gone');
+
+                for (var i = 0; i < json.data.length; i++) {
+
+                  var item = json.data[i];
+                  //console.log(item[" rate_foursquare"]);
+                  var fs = item[" rate_foursquare"]
+                  if (fs == "null"){
+                    //console.log(fs)
+
+                    pub_lat = parseFloat(item["location.lat"])
+                    pub_lng = parseFloat(item["location.lng"])
+                    //console.log(pub_lat, pub_lng)
+
+                    vicinity(pub_lat,pub_lng,"gone")
+                  }
+
+                }
+
                }
              }).trigger('change');
              
