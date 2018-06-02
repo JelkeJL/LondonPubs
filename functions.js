@@ -7,7 +7,7 @@ var map, infoWindow;
 
         infoWindow = new google.maps.InfoWindow;       
 
-        function addPubtoMap(a,b){
+        function addPubtoMap(a,b,index){
 
             var addmarker = {lat: a, lng: b};
 
@@ -27,11 +27,21 @@ var map, infoWindow;
 
             newmarker.addListener('click', function() {
               console.log("this is when the magic happens")
+
+              $(function() {
+                $.getJSON("data.json", function(json) {
+                   console.log(json.data.length);
+                   var item = json.data[index];
+                   var name = item["caption"]
+  
+                   console.log(name)
+                 })
+              })
             });            
 
         };
 
-        function addPhototoMap(a,b){
+        function addPhototoMap(a,b, index){
 
             var addmarker = {lat: a, lng: b};
 
@@ -50,9 +60,18 @@ var map, infoWindow;
             });
 
             newmarker.addListener('click', function() {
-              map.setZoom(8);
-              map.setCenter(marker.getPosition());
-            });  
+              console.log("this also is when the magic happens")
+
+              $(function() {
+                $.getJSON("data.json", function(json) {
+                   //console.log(json.data.length);
+                   var item = json.data[index];
+                   var name = item["caption"]
+  
+                   console.log(name)
+                 })
+              })
+            });               
 
         };
 
@@ -60,7 +79,7 @@ var map, infoWindow;
 
         // http://snipplr.com/view/25479/calculate-distance-between-two-points-with-latitude-and-longitude-coordinates/
         //calc distance between locations
-        function vicinity(lt,ln, exists) {
+        function vicinity(lt,ln, exists, i) {
           navigator.geolocation.getCurrentPosition(function(position){
               var here_lat = position.coords.latitude;
               var here_lng = position.coords.longitude;
@@ -82,19 +101,19 @@ var map, infoWindow;
               if (d>1) {
                 console.log("Further than 1km");
 //!!!           line added and commented out to check if adding the markers worked
-                addPubtoMap(lt,ln);
+                //addPubtoMap(lt,ln, i);
 
                 if (exists == "gone"){
-                  addPhototoMap(lt,ln)
+                  addPhototoMap(lt,ln, i)
                 }
 
               } else if (d<=1) {
                 console.log("within Walking Distance");
 
                 if (exists == "beer"){
-                  addPubtoMap(lt,ln);
+                  addPubtoMap(lt,ln, i);
                 } else if (exists == "gone"){
-                  addPhototoMap(lt,ln)
+                  addPhototoMap(lt,ln, i)
                 }
                 
               };
@@ -104,7 +123,7 @@ var map, infoWindow;
         };
 
 
-        function nearby(lt,ln) {
+        function nearby(lt,ln, i) {
           navigator.geolocation.getCurrentPosition(function(position){
               var here_lat = position.coords.latitude;
               var here_lng = position.coords.longitude;
@@ -126,10 +145,10 @@ var map, infoWindow;
               if (d>5) {
                 console.log("Further than 5km");
                 //line added and commented out to check if adding the markers worked
-                addPubtoMap(lt,ln);
+                addPubtoMap(lt,ln, i);
               } else if (d<=5) {
                 console.log("within Walking Distance");
-                addPubtoMap(lt,ln);
+                addPubtoMap(lt,ln, i);
               };
 
             })
@@ -211,7 +230,7 @@ var map, infoWindow;
                     pub_lng = parseFloat(item["location.lng"])
                     //console.log(pub_lat, pub_lng)
 
-                    vicinity(pub_lat,pub_lng,"beer")
+                    vicinity(pub_lat,pub_lng,"beer", i)
                   }
 
                 }
@@ -228,7 +247,7 @@ var map, infoWindow;
                     pub_lng = parseFloat(item["location.lng"])
                     //console.log(pub_lat, pub_lng)
 
-                    nearby(pub_lat,pub_lng)
+                    nearby(pub_lat,pub_lng, i)
                   
                 }
 
@@ -248,7 +267,7 @@ var map, infoWindow;
                     pub_lng = parseFloat(item["location.lng"])
                     //console.log(pub_lat, pub_lng)
 
-                    vicinity(pub_lat,pub_lng)
+                    vicinity(pub_lat,pub_lng, "beer", i)
                   }
 
                 }
@@ -269,7 +288,7 @@ var map, infoWindow;
                     pub_lng = parseFloat(item["location.lng"])
                     //console.log(pub_lat, pub_lng)
 
-                    vicinity(pub_lat,pub_lng,"gone")
+                    vicinity(pub_lat,pub_lng,"gone", i)
                   }
 
                 }
