@@ -88,7 +88,7 @@ var map, infoWindow;
             icon: image,
           });
 
-          console.log(pos.lat, pos.lng)
+         //console.log(pos.lat, pos.lng)
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -113,8 +113,8 @@ var map, infoWindow;
         $(function() {
         
           $.getJSON("data.json", function(json) {
-             console.log(json); // this will show the info it in firebug console
-             console.log(json.data.length);
+             //console.log(json); // this will show the info it in firebug console
+             //console.log(json.data.length);
         
 
              $('#criterium').bind('change', function (e){
