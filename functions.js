@@ -26,15 +26,20 @@ var map, infoWindow;
             });
 
             newmarker.addListener('click', function() {
-              console.log("this is when the magic happens")
+              //console.log("this is when the magic happens")
 
               $(function() {
                 $.getJSON("data.json", function(json) {
-                   console.log(json.data.length);
+                   //console.log(json.data.length);
                    var item = json.data[index];
                    var name = item["caption"]
   
                    console.log(name)
+
+                  //document.getElementById("pub_name").innerHTML = name
+                  //$('#output').show()
+
+
                  })
               })
             });            
@@ -60,7 +65,7 @@ var map, infoWindow;
             });
 
             newmarker.addListener('click', function() {
-              console.log("this also is when the magic happens")
+              //console.log("this also is when the magic happens")
 
               $(function() {
                 $.getJSON("data.json", function(json) {
@@ -99,16 +104,17 @@ var map, infoWindow;
               var d = R * c;
     
               if (d>1) {
-                console.log("Further than 1km");
+                //console.log("Further than 1km");
+                console.log("verified")
 //!!!           line added and commented out to check if adding the markers worked
-                //addPubtoMap(lt,ln, i);
+                addPubtoMap(lt,ln, i);
 
                 if (exists == "gone"){
                   addPhototoMap(lt,ln, i)
                 }
 
               } else if (d<=1) {
-                console.log("within Walking Distance");
+                //console.log("within Walking Distance");
 
                 if (exists == "beer"){
                   addPubtoMap(lt,ln, i);
@@ -143,9 +149,9 @@ var map, infoWindow;
               var d = R * c;
     
               if (d>5) {
-                console.log("Further than 5km");
+                console.log("verified");
                 //line added and commented out to check if adding the markers worked
-                addPubtoMap(lt,ln, i);
+                //addPubtoMap(lt,ln, i);
               } else if (d<=5) {
                 console.log("within Walking Distance");
                 addPubtoMap(lt,ln, i);
