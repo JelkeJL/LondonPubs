@@ -35,10 +35,11 @@ var map, infoWindow;
           navigator.geolocation.getCurrentPosition(function(position){
               var here_lat = position.coords.latitude;
               var here_lng = position.coords.longitude;
+              //console.log(position)
 
-              console.log(here_lat, here_lng)
+              //console.log(here_lat, here_lng)
 
-              var R = 6371; // km (change this constant to get miles)
+              var R = 6371; 
               var dLat = (lt-here_lat) * Math.PI / 180;
               var dLon = (ln-here_lng) * Math.PI / 180;
     
@@ -51,14 +52,18 @@ var map, infoWindow;
     
               if (d>1) {
                 console.log("Further than 1km");
+                //line added and commented out to check if adding the markers worked
+                //addPubtoMap(lt,ln);
               } else if (d<=1) {
-                console.log("within Walking Distance")
-                addPubtoMap(lt,ln)
+                console.log("within Walking Distance");
+                addPubtoMap(lt,ln);
               };
 
             })
           
         };
+
+
 
         //vicinity(51.514208,-0.116286)
 
@@ -85,9 +90,9 @@ var map, infoWindow;
                   if (fs != "null"){
                     //console.log(fs)
 
-                    pub_lat = item["location.lat"]
-                    pub_lng = item["location.lng"]
-                    //console.log(pub_lat, pub_lng)
+                    pub_lat = parseFloat(item["location.lat"])
+                    pub_lng = parseFloat(item["location.lng"])
+                    console.log(pub_lat, pub_lng)
 
                     vicinity(pub_lat,pub_lng)
                   }
