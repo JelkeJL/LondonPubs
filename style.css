@@ -102,23 +102,48 @@ form {
     border-radius: 25px;
 }
 
+#photo_pub img{
+    height: auto;
+    width: 99%;
+    border-radius: 25px;
+}
+
 #date_taken{
     font-family: 'Handlee', cursive;
+    font-size: 15px;
+    text-indent: 5%;
 }
 
 #pub_address{
     font-family: 'Handlee', cursive;
+    font-size: 14px;
+    text-indent: 5%;
 }
 
 #pub_name{
     font-family: 'PT Mono', monospace;
+    font-size: 15px;
+    text-indent: 5%;
+
 }
 
 #pub_description{
-    font-family: sans-serif;
+    font-family: 'PT Mono', monospace;
+    font-size: 12px;
+    text-indent: 5%;
 }
 
 #pub_details{
+    height: 40%;
+    margin: 1%;
+    background: white;
+    padding: 1%;
+    float: bottom;
+    font-family: sans-serif;
+    border-radius: 25px;
+}
+
+#rating{
     height: 40%;
     margin: 1%;
     background: white;

@@ -35,10 +35,22 @@ var map, infoWindow;
                    var name = item["caption"]
   
                    console.log(name)
+                   document.getElementById("pub_name").innerHTML = name
 
-                  document.getElementById("pub_name").innerHTML = name
-                  //$('#output').show()
+                   var photo = item["display.content"]
+                   document.getElementById("photo").innerHTML = "<img src=\"" + photo + "\">"
 
+                   var date_taken = item["date_taken"]
+                   document.getElementById("date_taken").innerHTML = "Date (Range) Picture: " + date_taken
+
+                   var address = item["location.geo_tags"]
+                   document.getElementById("pub_address").innerHTML = address
+
+                   var description = item["description"]
+                   document.getElementById("pub_description").innerHTML = "Provided Description Text (unaltered) <br>" + description
+
+                   var rating = item[" rate_foursquare"]
+                   document.getElementById("rating").innerHTML = "Foursquare rating: "+rating
 
                  })
               })
