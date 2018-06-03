@@ -140,9 +140,9 @@ var map, infoWindow;
 //!!!           line added and commented out to check if adding the markers worked
                 //addPubtoMap(lt,ln, i);
 
-                if (exists == "gone"){
-                  addPhototoMap(lt,ln, i)
-                }
+                //if (exists == "gone"){
+                //  addPhototoMap(lt,ln, i)
+                //}
 
               } else if (d<=1) {
                 //console.log("within Walking Distance");
