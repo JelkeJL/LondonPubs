@@ -349,6 +349,7 @@ var map, infoWindow;
                     pub_lat = parseFloat(item["location.lat"]);
                     pub_lng = parseFloat(item["location.lng"]);
                     addPubtoMap(pub_lat,pub_lng, i)
+                    $('#rating').hide();
                   }
 
                }
