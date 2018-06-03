@@ -29,6 +29,7 @@ var map, infoWindow;
               //console.log("this is when the magic happens")
 
               $(function() {
+                $('#output').show();
                 $.getJSON("data.json", function(json) {
                    //console.log(json.data.length);
                    var item = json.data[index];
@@ -79,6 +80,7 @@ var map, infoWindow;
             newmarker.addListener('click', function() {
 
               $(function() {
+                $('#output').show();
                 $.getJSON("data.json", function(json) {
                    //console.log(json.data.length);
                    var item = json.data[index];
@@ -149,6 +151,7 @@ var map, infoWindow;
                   addPubtoMap(lt,ln, i);
                 } else if (exists == "gone"){
                   addPhototoMap(lt,ln, i)
+
                 }
                 
               };
@@ -248,9 +251,11 @@ var map, infoWindow;
                if ($('#criterium').val() == 'empty'){
                  console.log("empty");
                  refresh()
+                 $('#output').hide();
 
                } else if ($('#criterium').val() == 'foursquare'){
                 //console.log('foursquare');
+                $('#output').hide();
                 refresh()
 
                 for (var i = 0; i < json.data.length; i++) {
@@ -266,12 +271,14 @@ var map, infoWindow;
                     //console.log(pub_lat, pub_lng)
 
                     vicinity(pub_lat,pub_lng,"beer", i)
+                    //$('#output').show()
                   }
 
                 }
 
                } else if ($('#criterium').val() == 'near'){
                 //console.log('near');
+                $('#output').hide();
                 refresh()
                 for (var i = 0; i < json.data.length; i++) {
 
@@ -283,11 +290,13 @@ var map, infoWindow;
                     //console.log(pub_lat, pub_lng)
 
                     nearby(pub_lat,pub_lng, i)
+                    //$('#output').show();
                   
                 }
 
                } else if ($('#criterium').val() == 'photo'){
                 //console.log('photo');
+                $('#output').hide();
                 refresh()
 
                 for (var i = 0; i < json.data.length; i++) {
@@ -303,12 +312,14 @@ var map, infoWindow;
                     //console.log(pub_lat, pub_lng)
 
                     vicinity(pub_lat,pub_lng, "beer", i)
+                    //$('#output').show();
                   }
 
                 }
 
                } else if ($('#criterium').val() == 'gone'){
                 //console.log('gone');
+                $('#output').hide();
                 refresh()
 
                 for (var i = 0; i < json.data.length; i++) {
@@ -318,12 +329,14 @@ var map, infoWindow;
                   var fs = item[" rate_foursquare"]
                   if (fs == "null"){
                     //console.log(fs)
+                    $('#rating').hide();
 
                     pub_lat = parseFloat(item["location.lat"])
                     pub_lng = parseFloat(item["location.lng"])
                     //console.log(pub_lat, pub_lng)
 
                     vicinity(pub_lat,pub_lng,"gone", i)
+                    //$('#output').show();
                   }
 
                 }
