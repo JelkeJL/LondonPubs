@@ -46,8 +46,8 @@ var map, infoWindow;
                    var address = item["location.geo_tags"]
                    document.getElementById("pub_address").innerHTML = address
 
-                   var description = item["description"]
-                   document.getElementById("pub_description").innerHTML = "Provided Description Text (unaltered) <br>" + description
+                   //var description = item["description"]
+                   //document.getElementById("pub_description").innerHTML = "Provided Description Text (unaltered): <br>" + description
 
                    var rating = item[" rate_foursquare"]
                    document.getElementById("rating").innerHTML = "Foursquare rating: "+rating
@@ -77,7 +77,6 @@ var map, infoWindow;
             });
 
             newmarker.addListener('click', function() {
-              //console.log("this also is when the magic happens")
 
               $(function() {
                 $.getJSON("data.json", function(json) {
@@ -85,10 +84,28 @@ var map, infoWindow;
                    var item = json.data[index];
                    var name = item["caption"]
   
-                   console.log(name)
+                   //console.log(name)
+                   document.getElementById("pub_name").innerHTML = name
+
+                   var photo = item["display.content"]
+                   document.getElementById("photo").innerHTML = "<img src=\"" + photo + "\">"
+
+                   var date_taken = item["date_taken"]
+                   document.getElementById("date_taken").innerHTML = "Date (Range) Picture: " + date_taken
+
+                   var address = item["location.geo_tags"]
+                   document.getElementById("pub_address").innerHTML = address
+
+                   //var description = item["caption2"]
+                   //document.getElementById("pub_description").innerHTML = "Provided Description Text (unaltered): <br>" + description
+
+                   
+                   document.getElementById("rating").innerHTML = ""
+
                  })
-              })
-            });               
+              });
+            });
+                                 
 
         };
 
@@ -119,7 +136,7 @@ var map, infoWindow;
                 //console.log("Further than 1km");
                 console.log("verified")
 //!!!           line added and commented out to check if adding the markers worked
-                addPubtoMap(lt,ln, i);
+                //addPubtoMap(lt,ln, i);
 
                 if (exists == "gone"){
                   addPhototoMap(lt,ln, i)

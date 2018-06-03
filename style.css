@@ -151,6 +151,8 @@ form {
     float: bottom;
     font-family: sans-serif;
     border-radius: 25px;
+    text-indent: 5%;
+
 }
 
 /* nav bar */
