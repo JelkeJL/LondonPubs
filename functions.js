@@ -42,7 +42,7 @@ var map, infoWindow;
                    document.getElementById("photo").innerHTML = "<img src=\"" + photo + "\">"
 
                    var date_taken = item["date_taken"]
-                   document.getElementById("date_taken").innerHTML = "Date (Range) Picture: " + date_taken
+                   document.getElementById("date_taken").innerHTML = "Date (Range) Image: " + date_taken
 
                    var address = item["location.geo_tags"]
                    document.getElementById("pub_address").innerHTML = address
@@ -93,7 +93,7 @@ var map, infoWindow;
                    document.getElementById("photo").innerHTML = "<img src=\"" + photo + "\">"
 
                    var date_taken = item["date_taken"]
-                   document.getElementById("date_taken").innerHTML = "Date (Range) Picture: " + date_taken
+                   document.getElementById("date_taken").innerHTML = "Date (Range) Image: " + date_taken
 
                    var address = item["location.geo_tags"]
                    document.getElementById("pub_address").innerHTML = address
