@@ -361,9 +361,7 @@ form {
 #thesis{
     margin: 1.5%;
     overflow: auto;
-    width: 45%;
-    float: left;
-
+    width: 99%;
 }
 
 #thesis img{
@@ -372,10 +370,6 @@ form {
 
 }
 
-#subject{
-    width: 45%;
-    float: right;
-}
 
 /* footer */
 
