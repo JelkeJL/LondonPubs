@@ -1,14 +1,3 @@
-//test links open in app
-var a=document.getElementsByTagName("a");
-for(var i=0;i<a.length;i++)
-{
-    a[i].onclick=function()
-    {
-        window.location=this.getAttribute("href");
-        return false
-    }
-}
-
 var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
